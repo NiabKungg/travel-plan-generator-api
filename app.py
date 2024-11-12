@@ -13,7 +13,7 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 app = Flask(__name__)
-CORS(app)
+CORS(app,origins=["http://localhost:5173"])
 
 @app.route("/result", methods=['POST'])
 def generate_travel_plan():
