@@ -28,8 +28,7 @@ def generate_travel_plan():
         f"วิธีการเดินทางหลักจะเป็น {how_to_travel}. "
         f"ความต้องการพิเศษ: {special_need}."
     )
-
-    response: ChatResponse = chat(model='qwen2.5-coder:1.5b', messages=[
+    response: ChatResponse = chat(model='llama3.2:1b', messages=[
         {
           'role': 'user',
             'content': prompt,
@@ -40,8 +39,8 @@ def generate_travel_plan():
 
     print(travel_plan)
 
-    ##return jsonify(result=travel_plan)
-    return travel_plan
+    return jsonify(result=travel_plan)
+    ##return travel_plan
 
 if __name__ == '__main__':
     app.run(debug=True)
