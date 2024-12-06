@@ -36,8 +36,9 @@ def generate_travel_plan():
         },
     ])
     
-
     travel_plan = response['message']['content']
+
+    print(travel_plan)
 
     ##return jsonify(result=travel_plan)
     return travel_plan
